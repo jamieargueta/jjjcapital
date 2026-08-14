@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/jamie/Downloads/jjj-capital-website_4.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJJ Capital LLC — Private Real Estate Lending</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0B1726;
+  --bg-card: rgba(255,255,255,0.025);
+  --border: rgba(255,255,255,0.05);
+  --border-light: rgba(255,255,255,0.04);
+  --gold: #C4A652;
+  --gold-dim: rgba(196,166,82,0.12);
+  --gold-border: rgba(196,166,82,0.2);
+  --gold-bg: rgba(196,166,82,0.06);
+  --text: #D8DEE4;
+  --text-bright: #E0E4E8;
+  --text-white: #F0F0F0;
+  --text-muted: #8A9DB0;
+  --text-dim: #7A8FA0;
+  --text-faint: #5A6B7A;
+  --green: #56AA78;
+  --blue: #5299C7;
+  --red: #CC6644;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(11,23,38,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(196,166,82,0.1);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 62px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { cursor: pointer; display: flex; align-items: center; gap: 10px; }
+.logo-mark { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--gold); letter-spacing: 3px; }
+.logo-text { font-size: 13px; font-weight: 500; color: var(--text-dim); letter-spacing: 3px; text-transform: uppercase; }
+.logo-text span { opacity: 0.5; }
+
+.nav-links { display: flex; gap: 2px; flex-wrap: wrap; }
+.nav-link {
+  background: none; border: none; font-family: var(--sans);
+  font-size: 13px; padding: 8px 12px; border-radius: 5px; cursor: pointer;
+  color: var(--text-dim); font-weight: 400; transition: all 0.15s;
+}
+.nav-link:hover { color: var(--gold); background: rgba(196,166,82,0.05); }
+.nav-link.active { color: var(--gold); background: rgba(196,166,82,0.08); font-weight: 600; }
+
+.hamburger {
+  display: none; background: none; border: none; color: var(--gold);
+  font-size: 24px; cursor: pointer; padding: 4px;
+}
+.mobile-menu {
+  display: none; flex-direction: column; padding: 8px 24px 16px; gap: 4px;
+}
+.mobile-menu button {
+  background: none; border: none; color: var(--text-dim); font-size: 15px;
+  padding: 10px 0; text-align: left; cursor: pointer; font-family: var(--sans);
+}
+.mobile-menu button.active { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .mobile-menu.open { display: flex; }
+}
+
+/* ── LAYOUT ── */
+.page { display: none; }
+.page.active { display: block; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
+
+/* ── HERO ── */
+.hero {
+  position: relative; padding: 90px 24px 72px; text-align: center;
+  background: linear-gradient(160deg, #0B1726 0%, #132844 45%, #1A3558 75%, #0B1726 100%);
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 20%, rgba(196,166,82,0.07) 0%, transparent 55%);
+}
+.hero-content { position: relative; max-width: 660px; margin: 0 auto; }
+.hero-eyebrow {
+  color: var(--gold); font-size: 12px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px;
+}
+.hero-title {
+  font-family: var(--serif); font-size: clamp(34px, 5.5vw, 52px);
+  font-weight: 700; line-height: 1.1; color: var(--text-white); margin-bottom: 22px;
+}
+.hero-sub {
+  font-size: 16px; line-height: 1.75; color: var(--text-muted);
+  max-width: 520px; margin: 0 auto 32px;
+}
+.hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── BUTTONS ── */
+.btn-gold {
+  background: var(--gold); color: var(--bg); border: none;
+  padding: 12px 26px; font-size: 13px; font-weight: 700; border-radius: 5px;
+  cursor: pointer; font-family: var(--sans); letter-spacing: 0.5px;
+}
+.btn-gold:hover { filter: brightness(1.1); }
+.btn-outline {
+  background: transparent; color: var(--gold);
+  border: 1px solid rgba(196,166,82,0.35); padding: 12px 26px;
+  font-size: 13px; font-weight: 600; border-radius: 5px;
+  cursor: pointer; font-family: var(--sans);
+}
+.btn-outline:hover { border-color: var(--gold); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px;
+  background: rgba(196,166,82,0.05); border-bottom: 1px solid rgba(196,166,82,0.1);
+}
+.stat-card {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 26px 16px; background: rgba(11,23,38,0.5);
+}
+.stat-val { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--gold); }
+.stat-label {
+  font-size: 11px; font-weight: 600; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px;
+}
+
+/* ── CARDS ── */
+.card {
+  padding: 24px; background: var(--bg-card); border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.card-gold { border-left: 3px solid var(--gold); }
+.card-blue { border-left: 3px solid var(--blue); }
+.card-red { border-left: 3px solid var(--red); }
+.card-green { border-left: 3px solid var(--green); }
+
+/* ── GRIDS ── */
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+
+/* ── HEADINGS ── */
+.h2 { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--text-white); margin-bottom: 12px; }
+.h3 {
+  font-size: 16px; font-weight: 600; color: #B0BEC5; margin-bottom: 14px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border-light);
+}
+
+/* ── BADGES ── */
+.badge {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px; white-space: nowrap; display: inline-block;
+}
+.badge-green { background: rgba(86,170,120,0.15); color: var(--green); border: 1px solid rgba(86,170,120,0.3); }
+.badge-blue { background: rgba(82,153,199,0.15); color: var(--blue); border: 1px solid rgba(82,153,199,0.3); }
+.badge-red { background: rgba(204,102,68,0.15); color: var(--red); border: 1px solid rgba(204,102,68,0.3); }
+.badge-gold { background: rgba(196,166,82,0.15); color: var(--gold); border: 1px solid rgba(196,166,82,0.3); }
+.type-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 3px; background: var(--gold-dim);
+  color: var(--gold); border: 1px solid var(--gold-border); display: inline-block;
+}
+
+/* ── METRICS ROW ── */
+.metrics {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;
+  padding: 12px 0; border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light); margin: 12px 0;
+}
+.metric-label {
+  display: block; font-size: 11px; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px;
+}
+.metric-value { display: block; font-size: 15px; font-weight: 700; color: var(--text-bright); }
+.metric-value.green { color: var(--green); }
+
+/* ── DIVIDER ── */
+.divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
+.divider-line { height: 1px; flex: 1; background: var(--border-light); }
+.divider-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-faint); white-space: nowrap;
+}
+
+/* ── DRAW TIMELINE ── */
+.draw-bar { display: flex; gap: 2px; margin-bottom: 12px; }
+.draw-segment { height: 6px; border-radius: 3px; }
+.draw-segment.funded { background: var(--gold); }
+.draw-segment.est { background: rgba(196,166,82,0.4); }
+.draw-segment.upcoming { background: rgba(255,255,255,0.08); }
+.draw-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid var(--border-light);
+}
+.draw-row:last-child { border-bottom: none; }
+
+/* ── ALERT BOX ── */
+.alert {
+  padding: 10px 14px; border-radius: 5px; margin-top: 8px;
+}
+.alert-red { background: rgba(204,102,68,0.08); border: 1px solid rgba(204,102,68,0.15); }
+.alert-blue { background: rgba(82,153,199,0.08); border: 1px solid rgba(82,153,199,0.15); }
+
+/* ── DOC CARD ── */
+.doc-card {
+  display: flex; align-items: center; gap: 14px; padding: 20px;
+  background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border);
+  cursor: pointer; transition: border-color 0.2s;
+}
+.doc-card:hover { border-color: rgba(196,166,82,0.2); }
+
+/* ── TEAM ── */
+.team-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--gold-dim); border: 1px solid rgba(196,166,82,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--gold); flex-shrink: 0;
+}
+.team-avatar.lg { width: 60px; height: 60px; font-size: 22px; border-width: 2px; }
+.stat-chip {
+  padding: 5px 10px; background: rgba(255,255,255,0.03);
+  border-radius: 4px; border: 1px solid var(--border);
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.stat-chip .val { font-size: 14px; font-weight: 700; color: var(--gold); }
+.stat-chip .lbl { font-size: 10px; color: var(--text-faint); }
+.stat-chip.lg { padding: 8px 16px; background: var(--gold-bg); border-color: rgba(196,166,82,0.12); }
+.stat-chip.lg .val { font-size: 18px; }
+.stat-chip.lg .lbl { font-size: 12px; margin-left: 3px; }
+
+/* ── STEP CARD ── */
+.step-num {
+  font-family: var(--serif); font-size: 32px; font-weight: 700;
+  color: rgba(196,166,82,0.25); line-height: 1; min-width: 40px;
+}
+
+/* ── FEATURED SECTION ── */
+.featured-band {
+  background: rgba(196,166,82,0.03);
+  border-top: 1px solid rgba(196,166,82,0.08);
+  border-bottom: 1px solid rgba(196,166,82,0.08);
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid var(--border-light); background: rgba(6,14,24,0.6);
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto; padding: 28px 24px; text-align: center;
+}
+
+/* ── UTILITIES ── */
+.mb-4 { margin-bottom: 4px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-28 { margin-bottom: 28px; }
+.mt-10 { margin-top: 10px; }
+.mt-12 { margin-top: 12px; }
+.mt-14 { margin-top: 14px; }
+.mt-16 { margin-top: 16px; }
+.gap-6 { gap: 6px; }
+.gap-10 { gap: 10px; }
+.gap-14 { gap: 14px; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+@media (max-width: 600px) {
+  .hero { padding: 60px 20px 50px; }
+  .section { padding: 40px 16px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo" onclick="navigate(&#39;home&#39;)">
+      <span class="logo-mark">JJJ</span>
+      <span class="logo-text">Capital <span>LLC</span></span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="investor">Investor Intro</button>
+      <button class="nav-link" data-page="opps">Private Lending Opps</button>
+      <button class="nav-link" data-page="construction">Construction Loans</button>
+      <button class="nav-link" data-page="about">About Us</button>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button data-page="home" class="active">Home</button>
+    <button data-page="investor">Investor Intro</button>
+    <button data-page="opps">Private Lending Opps</button>
+    <button data-page="construction">Construction Loans</button>
+    <button data-page="about">About Us</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     HOME
+═══════════════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Private Real Estate Lending · Southern Arizona</p>
+      <h1 class="hero-title">Vetted Loans.<br>Transparent Returns.</h1>
+      <p class="hero-sub">
+        JJJ Capital connects select investors with carefully vetted private lending opportunities focused in Southern Arizona. Real estate-backed loans and short-term bridge financing, structured to preserve capital and generate attractive returns.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-gold" onclick="navigate(&#39;opps&#39;)">View Current Opportunities</button>
+        <button class="btn-outline" onclick="navigate(&#39;investor&#39;)">Investor Introduction</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-val">$3,545,000</span>
+      <span class="stat-label">Capital Deployed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">$25,000</span>
+      <span class="stat-label">Minimum Investment</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">10–12%</span>
+      <span class="stat-label">Investor Interest Rates</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-val">Southern AZ</span>
+      <span class="stat-label">Market Focus</span>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section">
+    <h2 class="h2">How JJJ Capital Works</h2>
+    <div class="grid-4">
+      <div class="card">
+        <div style="font-size:28px; margin-bottom:14px;">🔍</div>
+        <h3 style="color:var(--text-bright); font-size:16px; font-weight:600; margin-bottom:6px;">We Vet the Deal</h3>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">Every loan begins with a thorough review of the builder, the property, the construction budget, projected value, and market conditions.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:28px; margin-bottom:14px;">📬</div>
+        <h3 style="color:var(--text-bright); font-size:16px; font-weight:600; margin-bottom:6px;">Investors Are Notified</h3>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">When a project qualifies, our investor pool is notified via email. The complete investment package is posted on our website for review.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:28px; margin-bottom:14px;">🏗️</div>
+        <h3 style="color:var(--text-bright); font-size:16px; font-weight:600; margin-bottom:6px;">We Oversee Construction</h3>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">JJJ Capital invests a minimum 10% of every loan and conducts regular on-site inspections, verifying progress before each draw.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:28px; margin-bottom:14px;">💰</div>
+        <h3 style="color:var(--text-bright); font-size:16px; font-weight:600; margin-bottom:6px;">You Earn Monthly Interest</h3>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">Interest accrues from each funded draw. Monthly payments are collected by the account servicing company and distributed to each investor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Opportunity -->
+  <div class="featured-band">
+    <div class="section">
+      <div class="flex justify-between items-center flex-wrap gap-14 mb-20">
+        <div>
+          <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:4px;">Now Funding</p>
+          <h2 class="h2" style="margin-bottom:0">Featured Opportunity</h2>
+        </div>
+        <button class="btn-gold" onclick="navigate(&#39;opps&#39;)">All Opportunities →</button>
+      </div>
+
+      <div class="card card-gold">
+        <div class="flex justify-between items-start flex-wrap gap-6">
+          <div>
+            <h3 style="color:var(--text-bright); font-size:18px; font-weight:700;">$850,000 Construction Loan</h3>
+            <p style="color:var(--text-dim); font-size:13px; margin-top:4px;">3821 W Cayton Mountain Dr, Marana, AZ</p>
+            <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Custom Home in Gated Dove Mountain Community</p>
+            <p style="color:var(--gold); font-size:14px; font-weight:600; margin-top:6px;">Investor Rate: 10.25%</p>
+          </div>
+          <span class="badge badge-gold">Funding</span>
+        </div>
+
+        <div class="mt-16">
+          <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;">Draw Schedule</div>
+          <div class="draw-bar">
+            <div class="draw-segment funded" style="flex:150000"></div>
+            <div class="draw-segment est" style="flex:200000"></div>
+            <div class="draw-segment upcoming" style="flex:200000"></div>
+            <div class="draw-segment upcoming" style="flex:200000"></div>
+            <div class="draw-segment upcoming" style="flex:100000"></div>
+          </div>
+          <div class="draw-row">
+            <span style="font-size:13px; color:#B0BEC5;">Draw 1 — <strong style="color:var(--text-bright)">$150,000</strong></span>
+            <span style="font-size:12px; color:var(--green); font-weight:600;">Funded May 8</span>
+          </div>
+          <div class="draw-row">
+            <span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$200,000</strong></span>
+            <span style="font-size:12px; color:var(--gold);">Est. Late Aug / Early Sep 2026</span>
+          </div>
+          <div class="draw-row">
+            <span style="font-size:13px; color:#B0BEC5;">Draw 3 — <strong style="color:var(--text-bright)">$200,000</strong></span>
+            <span style="font-size:12px; color:var(--text-faint);">Upcoming</span>
+          </div>
+          <div class="draw-row">
+            <span style="font-size:13px; color:#B0BEC5;">Draw 4 — <strong style="color:var(--text-bright)">$200,000</strong></span>
+            <span style="font-size:12px; color:var(--text-faint);">Upcoming</span>
+          </div>
+          <div class="draw-row">
+            <span style="font-size:13px; color:#B0BEC5;">Draw 5 — <strong style="color:var(--text-bright)">$100,000</strong></span>
+            <span style="font-size:12px; color:var(--text-faint);">Upcoming</span>
+          </div>
+        </div>
+
+        <div class="mt-16 text-right">
+          <a href="https://www.jjjcapitalllc.com/s/PLO-hjwd.pdf" target="_blank" style="color:var(--gold); font-size:13px; font-weight:600;">📄 Private Lending Opportunity →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Preview -->
+  <div class="section">
+    <h2 class="h2">Management Team</h2>
+    <p style="color:var(--text-dim); font-size:15px; margin-bottom:24px; max-width:550px;">
+      Three principals with combined 60+ years in real estate, private lending, and investor relations.
+    </p>
+    <div class="grid-3">
+      <!-- Jamie -->
+      <div class="card">
+        <div class="flex items-center gap-14 mb-12">
+          <div class="team-avatar">JA</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">Jamie Argueta</h3>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Operations &amp; Investor Experience</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-10">
+          <div class="stat-chip"><span class="val">30+</span><span class="lbl">Years in RE</span></div>
+          <div class="stat-chip"><span class="val">$60M+</span><span class="lbl">Land Sales</span></div>
+          <div class="stat-chip"><span class="val">$125M+</span><span class="lbl">Mortgages</span></div>
+        </div>
+      </div>
+      <!-- John R -->
+      <div class="card">
+        <div class="flex items-center gap-14 mb-12">
+          <div class="team-avatar">JR</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">John Rallis</h3>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Underwriting &amp; Loan Placement</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-10">
+          <div class="stat-chip"><span class="val">20+</span><span class="lbl">Years Lending</span></div>
+          <div class="stat-chip"><span class="val">1,400+</span><span class="lbl">Loans</span></div>
+          <div class="stat-chip"><span class="val">$250M+</span><span class="lbl">Funded</span></div>
+        </div>
+      </div>
+      <!-- John E -->
+      <div class="card">
+        <div class="flex items-center gap-14 mb-12">
+          <div class="team-avatar">JE</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">John Entz</h3>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Investor Relations &amp; Strategy</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-10">
+          <div class="stat-chip"><span class="val">10+</span><span class="lbl">Years Investing</span></div>
+          <div class="stat-chip"><span class="val">IL, CA, AZ</span><span class="lbl">Markets</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:24px;">
+      <button class="btn-outline" onclick="navigate(&#39;about&#39;)">Full Team Bios →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     INVESTOR INTRO
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-investor">
+  <div class="section">
+    <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">For Investors</p>
+    <h2 class="h2">Investor Introduction</h2>
+
+    <div class="card card-gold mb-28">
+      <p style="color:#B0BEC5; font-size:16px; line-height:1.8;">
+        JJJ Capital connects select investors with carefully vetted private lending opportunities, focused largely in Southern Arizona. We specialize in real estate-backed loans and short-term bridge financing, structured to preserve capital and generate attractive returns.
+      </p>
+      <div style="margin-top:20px; padding:16px 20px; background:var(--gold-bg); border-radius:6px; border:1px solid rgba(196,166,82,0.12); display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+        <span style="font-family:var(--serif); font-size:28px; font-weight:700; color:var(--gold);">$25,000</span>
+        <span style="font-size:14px; color:var(--text-muted);">Current Investor Minimum Commitment</span>
+      </div>
+    </div>
+
+    <h3 class="h3">Key Documents</h3>
+    <div class="grid-2 mb-8">
+      <a href="https://www.jjjcapitalllc.com/s/JJJ-Capital-Investor-Intro-12926.pdf" target="_blank" class="doc-card">
+        <span style="font-size:28px">📄</span>
+        <div>
+          <span style="color:var(--text-bright); font-size:15px; font-weight:600;">Investor Intro Package</span>
+          <span style="color:var(--text-faint); font-size:12px; display:block; margin-top:2px;">PDF — Company overview, structure, and terms</span>
+        </div>
+      </a>
+      <a href="https://www.jjjcapitalllc.com/s/Automatic-Deposit-and-IRS.pdf" target="_blank" class="doc-card">
+        <span style="font-size:28px">📋</span>
+        <div>
+          <span style="color:var(--text-bright); font-size:15px; font-weight:600;">Pioneer Title — Auto Deposit &amp; IRS Forms</span>
+          <span style="color:var(--text-faint); font-size:12px; display:block; margin-top:2px;">PDF — Account servicing and tax reporting</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">Why JJJ Capital</span><div class="divider-line"></div></div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Asset-Backed Security</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">Every loan is secured by real property. Investors are named on the Deed of Trust and Promissory Note.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Skin in the Game</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">JJJ Capital invests a minimum 10% of every loan. Our interests are aligned with yours.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Active Oversight</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">Regular on-site inspections and draw verification ensure projects stay on track and on budget.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Monthly Income</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">Interest accrues from funding and is distributed monthly through our account servicing company.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Full Transparency</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">Every loan opportunity is posted publicly with complete details. Status updates on all active loans.</p>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--gold); font-size:14px; font-weight:600; margin-bottom:6px;">Local Expertise</h4>
+        <p style="color:var(--text-muted); font-size:14px; line-height:1.6;">Our team has deep roots in Southern Arizona real estate with combined $400M+ in transaction experience.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRIVATE LENDING OPPORTUNITIES
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-opps">
+  <div class="section">
+    <h2 class="h2">Private Lending Opportunities</h2>
+    <p style="color:var(--text-dim); font-size:15px; margin-bottom:8px; max-width:600px;">
+      Complete transparency into every loan — upcoming, current, and closed. All loans are secured by real property in Southern Arizona.
+    </p>
+
+    <!-- UPCOMING -->
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">Upcoming</span><div class="divider-line"></div></div>
+
+    <div class="card card-gold mb-16">
+      <div class="flex justify-between items-start flex-wrap gap-6 mb-4">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$850,000 Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">3821 W Cayton Mountain Dr, Marana, AZ</p>
+          <p style="color:var(--text-muted); font-size:14px; margin-top:3px;">Custom Home in Gated Dove Mountain Community</p>
+          <p style="color:var(--gold); font-size:14px; font-weight:600; margin-top:6px;">Investor Rate: 10.25%</p>
+        </div>
+        <div class="flex gap-6">
+          <span class="type-badge">Construction</span>
+          <span class="badge badge-gold">Funding</span>
+        </div>
+      </div>
+      <div class="mt-16">
+        <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;">Draw Schedule</div>
+        <div class="draw-bar">
+          <div class="draw-segment funded" style="flex:150000"></div>
+          <div class="draw-segment est" style="flex:200000"></div>
+          <div class="draw-segment upcoming" style="flex:200000"></div>
+          <div class="draw-segment upcoming" style="flex:200000"></div>
+          <div class="draw-segment upcoming" style="flex:100000"></div>
+        </div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 1 — <strong style="color:var(--text-bright)">$150,000</strong></span><span style="font-size:12px; color:var(--green); font-weight:600;">Funded May 8</span></div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$200,000</strong></span><span style="font-size:12px; color:var(--gold);">Est. Late Aug / Early Sep 2026</span></div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 3 — <strong style="color:var(--text-bright)">$200,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 4 — <strong style="color:var(--text-bright)">$200,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 5 — <strong style="color:var(--text-bright)">$100,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
+      </div>
+      <div class="mt-14 text-right">
+        <a href="https://www.jjjcapitalllc.com/s/PLO-hjwd.pdf" target="_blank" style="color:var(--gold); font-size:13px; font-weight:600;">📄 Private Lending Opportunity →</a>
+      </div>
+    </div>
+
+    <!-- CURRENT -->
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">Current — Performing</span><div class="divider-line"></div></div>
+
+    <!-- Loan: 6701 S Renaissance -->
+    <div class="card card-blue mb-16">
+      <div class="flex justify-between items-start flex-wrap gap-6 mb-8">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$475,000 — Commercial Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">6701 S Renaissance Dr, Tucson, AZ</p>
+        </div>
+        <div class="flex gap-6 flex-wrap">
+          <span class="type-badge">Commercial Construction</span>
+          <span class="badge badge-green">Performing</span>
+        </div>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$475,000</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">March 20, 2025</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">2nd Draw — TBD</p>
+    </div>
+
+
+
+
+
+    <!-- Loan: 13777 E Windy Way -->
+    <div class="card card-red mb-16">
+      <div class="flex justify-between items-start flex-wrap gap-6 mb-8">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$360,000 — SFR Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">13777 E Windy Way, Vail, AZ 85641</p>
+        </div>
+        <div class="flex gap-6 flex-wrap">
+          <span class="type-badge">Construction</span>
+          <span class="badge badge-red">60 Days Late</span>
+        </div>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$360,000</span></div>
+        <div><span class="metric-label">Investor Rate</span><span class="metric-value">11.5% Pre-COO → 11% Post-COO</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">January 27, 2026</span></div>
+        <div><span class="metric-label">Listed Price</span><span class="metric-value green">$465,000</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">
+        Home construction is complete. Listed for sale at $465,000. Borrower is 60 days late on payments.
+      </p>
+    </div>
+
+    <!-- CLOSED -->
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">Closed Loans</span><div class="divider-line"></div></div>
+
+    <!-- Closed: 325 W University -->
+    <div class="card card-green mb-16" style="opacity:0.85">
+      <div class="flex justify-between items-start flex-wrap gap-6">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$700,000 — Acquisition / Remodel Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">325 W University Blvd / 735 Alder Ave, Tucson, AZ</p>
+        </div>
+        <span class="badge badge-green">Paid Off</span>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$700,000</span></div>
+        <div><span class="metric-label">Investor Rate</span><span class="metric-value">12%</span></div>
+        <div><span class="metric-label">Term</span><span class="metric-value">12 months</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">January 14, 2026</span></div>
+        <div><span class="metric-label">Payoff Date</span><span class="metric-value green">February 16, 2026</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px;">Multiple residential and commercial buildings.</p>
+    </div>
+
+    <!-- Closed: 11790 N Migitty Lane -->
+    <div class="card card-green mb-16" style="opacity:0.85">
+      <div class="flex justify-between items-start flex-wrap gap-6">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$500,000 — SFR Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">11790 N Migitty Lane, Marana, AZ</p>
+        </div>
+        <span class="badge badge-green">Paid Off</span>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$500,000</span></div>
+        <div><span class="metric-label">Investor Rate</span><span class="metric-value">11%</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">January 27, 2026</span></div>
+        <div><span class="metric-label">Payoff Date</span><span class="metric-value green">May 12, 2026</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px;">Home was listed at $950,000.</p>
+    </div>
+
+    <!-- Closed: 13763 E Windy Way -->
+    <div class="card card-green mb-16" style="opacity:0.85">
+      <div class="flex justify-between items-start flex-wrap gap-6">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$360,000 — SFR Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">13763 E Windy Way, Vail, AZ 85641</p>
+        </div>
+        <span class="badge badge-green">Paid Off</span>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$360,000</span></div>
+        <div><span class="metric-label">Investor Rate</span><span class="metric-value">11%</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">January 27, 2026</span></div>
+        <div><span class="metric-label">Payoff Date</span><span class="metric-value green">June 5, 2026</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px;">Home sold for $499,000.</p>
+    </div>
+
+    <!-- DELINQUENT -->
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">Delinquent</span><div class="divider-line"></div></div>
+    <div class="card text-center" style="padding:24px;">
+      <p style="color:var(--text-faint); font-size:14px;">No delinquent loans at this time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONSTRUCTION LOANS
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-construction">
+  <div class="section">
+    <h2 class="h2">Construction Loans</h2>
+    <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:28px; max-width:700px;">
+      For many homebuilders, obtaining a construction loan from a traditional bank can be a tedious, frustrating, and time-consuming process — often not worth the effort. JJJ Capital fills this gap by providing a more efficient and flexible private lending alternative.
+    </p>
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div class="card flex items-start" style="gap:20px;">
+        <span class="step-num">01</span>
+        <div style="flex:1">
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Loan Evaluation Process</h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">When a builder approaches JJJ Capital for a construction loan, we conduct a thorough review of both the builder and the proposed project. This includes the builder's experience and track record, details of the subject property and surrounding neighborhood, home size and construction plans, construction budget and draw schedule, projected home value upon completion, and desired loan term (typically 12–18 months).</p>
+        </div>
+      </div>
+      <div class="card flex items-start" style="gap:20px;">
+        <span class="step-num">02</span>
+        <div style="flex:1">
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Investor Notification</h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">If, after review, JJJ Capital determines that the project is a suitable lending opportunity, it will notify its investor pool via email of the upcoming private lending opportunity. The complete investment package will be available for investors to review on this website.</p>
+        </div>
+      </div>
+      <div class="card flex items-start" style="gap:20px;">
+        <span class="step-num">03</span>
+        <div style="flex:1">
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Oversight &amp; Inspections</h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">For every loan, JJJ Capital participates with a minimum 10% investment of the total loan amount. JJJ Capital also oversees the loan throughout its duration, which includes conducting regular on-site inspections during construction and verifying progress before each builder-requested draw to ensure work aligns with the construction schedule.</p>
+        </div>
+      </div>
+      <div class="card flex items-start" style="gap:20px;">
+        <span class="step-num">04</span>
+        <div style="flex:1">
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Investor Participation &amp; Funding</h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">When an investor chooses to participate, the investor sends funds directly to the title company. This ensures that each investor is named on both the Deed of Trust and the Promissory Note for their respective share of the investment, with JJJ Capital named as the ownership of interest for the remaining undistributed loan amount. If new investors participate in subsequent draws, they will be assigned a proportional share of the Deed of Trust and Promissory Note to reflect their contribution.</p>
+        </div>
+      </div>
+      <div class="card flex items-start" style="gap:20px;">
+        <span class="step-num">05</span>
+        <div style="flex:1">
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Interest Payments &amp; Loan Repayment</h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">On the monthly anniversary of the initial loan funding (first draw), the builder makes interest payments to the account servicing company. This servicing company collects payments from the builder and distributes each investor's share of the interest accordingly. Investors continue to receive monthly interest payments until the loan is fully repaid — either through the sale of the completed home or a refinance with another lender. When the loan is paid off in full, the account servicing company disburses the investor's principal and any final interest owed directly to the investor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ABOUT US
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="section">
+    <h2 class="h2">JJJ Capital LLC Management Team</h2>
+
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <!-- Jamie -->
+      <div class="card card-gold">
+        <div class="flex items-center mb-16" style="gap:16px;">
+          <div class="team-avatar lg">JA</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">Jamie Argueta</h3>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Operations &amp; Investor Experience</p>
+          </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:8px;">
+          Jamie Argueta has been involved in real estate for over 30 years. He was a real estate developer in Southern Arizona for over 20 years, directly managing master-planned communities, residential subdivisions, custom lot subdivisions, and commercial properties from raw land to builder-ready. He has negotiated over $60M in land sales to builders and commercial developers in Southern Arizona. Jamie is focused on the private lending opportunity systems to ensure the investor experience is optimized and every investor is informed before and after the loan opportunity process.
+        </p>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:12px;">
+          As a licensed mortgage loan originator over the past 5 years, Jamie has originated over $125M in mortgages.
+        </p>
+        <div class="flex flex-wrap gap-14 mt-12">
+          <div class="stat-chip lg"><span class="val">30+</span><span class="lbl">Years in RE</span></div>
+          <div class="stat-chip lg"><span class="val">$60M+</span><span class="lbl">Land Sales</span></div>
+          <div class="stat-chip lg"><span class="val">$125M+</span><span class="lbl">Mortgages Originated</span></div>
+        </div>
+      </div>
+
+      <!-- John R -->
+      <div class="card card-gold">
+        <div class="flex items-center mb-16" style="gap:16px;">
+          <div class="team-avatar lg">JR</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">John Rallis</h3>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Underwriting &amp; Loan Placement</p>
+          </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:12px;">
+          John Rallis has been lending for over 20 years and exclusively in private lending for the last 16 years. John has placed over 1,400 hard money loans totaling well over $250,000,000. In addition, John currently owns nearly 30 rentals in Tucson, AZ. John has extensive experience in property evaluation and market analysis. His ability to assess risk and negotiate terms with borrowers are vital aspects in underwriting any loan prospect.
+        </p>
+        <div class="flex flex-wrap gap-14 mt-12">
+          <div class="stat-chip lg"><span class="val">20+</span><span class="lbl">Years Lending</span></div>
+          <div class="stat-chip lg"><span class="val">1,400+</span><span class="lbl">Loans Placed</span></div>
+          <div class="stat-chip lg"><span class="val">$250M+</span><span class="lbl">Total Funded</span></div>
+        </div>
+      </div>
+
+      <!-- John E -->
+      <div class="card card-gold">
+        <div class="flex items-center mb-16" style="gap:16px;">
+          <div class="team-avatar lg">JE</div>
+          <div>
+            <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">John Entz</h3>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Investor Relations &amp; Strategy</p>
+          </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:12px;">
+          John Entz has been a real estate investor in Illinois, California, and Arizona over the course of the last 10 years. He has spent most of his career in television sports management working with a variety of sports networks. John is focused on investor relations and strategy.
+        </p>
+        <div class="flex flex-wrap gap-14 mt-12">
+          <div class="stat-chip lg"><span class="val">10+</span><span class="lbl">Years Investing</span></div>
+          <div class="stat-chip lg"><span class="val">IL, CA, AZ</span><span class="lbl">Markets</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="flex items-center" style="justify-content:center; gap:8px; margin-bottom:10px;">
+      <span style="font-family:var(--serif); font-size:20px; font-weight:700; color:var(--gold); letter-spacing:2px;">JJJ</span>
+      <span style="font-size:12px; color:var(--text-faint); letter-spacing:3px; text-transform:uppercase;">Capital LLC</span>
+    </div>
+    <p style="color:#3A4C5E; font-size:12px; line-height:1.6; max-width:580px; margin:0 auto 8px;">
+      JJJ Capital LLC is a private money lender. This site does not constitute an offer or solicitation to lend. All investments involve risk, including loss of principal. Past performance does not guarantee future results.
+    </p>
+    <p style="color:#2A3A4A; font-size:11px;">© 2026 JJJ Capital LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function navigate(pageId) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show target page
+  const target = document.getElementById('page-' + pageId);
+  if (target) target.classList.add('active');
+
+  // Update nav links
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.dataset.page === pageId);
+  });
+  document.querySelectorAll('.mobile-menu button').forEach(l => {
+    l.classList.toggle('active', l.dataset.page === pageId);
+  });
+
+  // Close mobile menu
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.querySelector('.hamburger').textContent = '☰';
+
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.querySelector('.hamburger');
+  const isOpen = menu.classList.toggle('open');
+  btn.textContent = isOpen ? '✕' : '☰';
+}
+
+// Attach nav link click events
+document.querySelectorAll('.nav-link, .mobile-menu button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    navigate(this.dataset.page);
+  });
+});
+</script>
+
+
+
+</body></html>
