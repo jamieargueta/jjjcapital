@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/jamie/Downloads/jjj-capital-website_8.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JJJ Capital LLC — Private Real Estate Lending</title>
-<link href="./index_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -309,13 +309,13 @@ a { color: inherit; text-decoration: none; }
 ═══════════════════════════════════════════════════════ -->
 <nav class="nav">
   <div class="nav-inner">
-    <div class="logo" onclick="navigate(&#39;home&#39;)">
+    <div class="logo" onclick="navigate('home')">
       <span class="logo-mark">JJJ</span>
       <span class="logo-text">Capital <span>LLC</span></span>
     </div>
     <div class="nav-links">
-      <button class="nav-link" data-page="home">Home</button>
-      <button class="nav-link active" data-page="investor">Investor Intro</button>
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="investor">Investor Intro</button>
       <button class="nav-link" data-page="opps">Private Lending Opps</button>
       <button class="nav-link" data-page="construction">Construction Loans</button>
       <button class="nav-link" data-page="about">About Us</button>
@@ -323,8 +323,8 @@ a { color: inherit; text-decoration: none; }
     <button class="hamburger" onclick="toggleMobile()">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <button data-page="home" class="">Home</button>
-    <button data-page="investor" class="active">Investor Intro</button>
+    <button data-page="home" class="active">Home</button>
+    <button data-page="investor">Investor Intro</button>
     <button data-page="opps">Private Lending Opps</button>
     <button data-page="construction">Construction Loans</button>
     <button data-page="about">About Us</button>
@@ -334,7 +334,7 @@ a { color: inherit; text-decoration: none; }
 <!-- ═══════════════════════════════════════════════════════
      HOME
 ═══════════════════════════════════════════════════════ -->
-<div class="page" id="page-home">
+<div class="page active" id="page-home">
 
   <!-- Hero -->
   <div class="hero">
@@ -346,8 +346,8 @@ a { color: inherit; text-decoration: none; }
         JJJ Capital connects select investors with carefully vetted private lending opportunities focused in Southern Arizona. Real estate-backed loans and short-term bridge financing, structured to preserve capital and generate attractive returns.
       </p>
       <div class="hero-cta">
-        <button class="btn-gold" onclick="navigate(&#39;opps&#39;)">View Current Opportunities</button>
-        <button class="btn-outline" onclick="navigate(&#39;investor&#39;)">Investor Introduction</button>
+        <button class="btn-gold" onclick="navigate('opps')">View Current Opportunities</button>
+        <button class="btn-outline" onclick="navigate('investor')">Investor Introduction</button>
       </div>
     </div>
   </div>
@@ -407,7 +407,7 @@ a { color: inherit; text-decoration: none; }
           <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:4px;">Now Funding</p>
           <h2 class="h2" style="margin-bottom:0">Featured Opportunity</h2>
         </div>
-        <button class="btn-gold" onclick="navigate(&#39;opps&#39;)">All Opportunities →</button>
+        <button class="btn-gold" onclick="navigate('opps')">All Opportunities →</button>
       </div>
 
       <div class="card card-gold">
@@ -436,7 +436,7 @@ a { color: inherit; text-decoration: none; }
           </div>
           <div class="draw-row">
             <span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$200,000</strong> <span style="font-size:12px; color:var(--gold); font-weight:600;">($50K available for investor)</span></span>
-            <span style="font-size:12px; color:var(--gold);">Est. Early Sep 2026</span>
+            <span style="font-size:12px; color:var(--gold);">Est. Early Oct 2026</span>
           </div>
           <div class="draw-row">
             <span style="font-size:13px; color:#B0BEC5;">Draw 3 — <strong style="color:var(--text-bright)">$200,000</strong></span>
@@ -472,7 +472,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar">JA</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">Jamie Argueta</h3>
-            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Operations &amp; Investor Experience</p>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Operations & Investor Experience</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-10">
@@ -487,7 +487,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar">JR</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">John Rallis</h3>
-            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Underwriting &amp; Loan Placement</p>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Underwriting & Loan Placement</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-10">
@@ -502,7 +502,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar">JE</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:16px; font-weight:600;">John Entz</h3>
-            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Investor Relations &amp; Strategy</p>
+            <p style="color:var(--gold); font-size:12px; font-weight:500; margin-top:2px;">Investor Relations & Strategy</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-10">
@@ -512,7 +512,7 @@ a { color: inherit; text-decoration: none; }
       </div>
     </div>
     <div class="text-center" style="margin-top:24px;">
-      <button class="btn-outline" onclick="navigate(&#39;about&#39;)">Full Team Bios →</button>
+      <button class="btn-outline" onclick="navigate('about')">Full Team Bios →</button>
     </div>
   </div>
 </div>
@@ -520,7 +520,7 @@ a { color: inherit; text-decoration: none; }
 <!-- ═══════════════════════════════════════════════════════
      INVESTOR INTRO
 ═══════════════════════════════════════════════════════ -->
-<div class="page active" id="page-investor">
+<div class="page" id="page-investor">
   <div class="section">
     <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">For Investors</p>
     <h2 class="h2">Investor Introduction</h2>
@@ -604,7 +604,7 @@ a { color: inherit; text-decoration: none; }
           <div class="draw-segment upcoming" style="flex:100000"></div>
         </div>
         <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 1 — <strong style="color:var(--text-bright)">$150,000</strong></span><span style="font-size:12px; color:var(--green); font-weight:600;">Funded May 8</span></div>
-        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$200,000</strong> <span style="font-size:12px; color:var(--gold); font-weight:600;">($50K available for investor)</span></span><span style="font-size:12px; color:var(--gold);">Est. Early Sep 2026</span></div>
+        <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$200,000</strong> <span style="font-size:12px; color:var(--gold); font-weight:600;">($50K available for investor)</span></span><span style="font-size:12px; color:var(--gold);">Est. Early Oct 2026</span></div>
         <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 3 — <strong style="color:var(--text-bright)">$200,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
         <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 4 — <strong style="color:var(--text-bright)">$200,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
         <div class="draw-row"><span style="font-size:13px; color:#B0BEC5;">Draw 5 — <strong style="color:var(--text-bright)">$100,000</strong></span><span style="font-size:12px; color:var(--text-faint);">Upcoming</span></div>
@@ -632,14 +632,24 @@ a { color: inherit; text-decoration: none; }
         <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;">Draw Schedule</div>
         <div class="draw-bar">
           <div class="draw-segment funded" style="flex:175000"></div>
-          <div class="draw-segment upcoming" style="flex:375000"></div>
+          <div class="draw-segment est" style="flex:150000"></div>
+          <div class="draw-segment upcoming" style="flex:150000"></div>
+          <div class="draw-segment upcoming" style="flex:75000"></div>
         </div>
         <div class="draw-row">
           <span style="font-size:13px; color:#B0BEC5;">Draw 1 — <strong style="color:var(--text-bright)">$175,000</strong></span>
-          <span style="font-size:12px; color:var(--green); font-weight:600;">Filled — Est. August 31, 2026</span>
+          <span style="font-size:12px; color:var(--green); font-weight:600;">Filled — August 31, 2026</span>
         </div>
         <div class="draw-row">
-          <span style="font-size:13px; color:#B0BEC5;">Remaining Draws — <strong style="color:var(--text-bright)">$375,000</strong></span>
+          <span style="font-size:13px; color:#B0BEC5;">Draw 2 — <strong style="color:var(--text-bright)">$150,000</strong> <span style="font-size:12px; color:var(--gold); font-weight:600;">($50K available for investor)</span></span>
+          <span style="font-size:12px; color:var(--gold);">Est. Early Oct 2026</span>
+        </div>
+        <div class="draw-row">
+          <span style="font-size:13px; color:#B0BEC5;">Draw 3 — <strong style="color:var(--text-bright)">$150,000</strong></span>
+          <span style="font-size:12px; color:var(--text-faint);">Upcoming</span>
+        </div>
+        <div class="draw-row">
+          <span style="font-size:13px; color:#B0BEC5;">Draw 4 — <strong style="color:var(--text-bright)">$75,000</strong></span>
           <span style="font-size:12px; color:var(--text-faint);">Upcoming</span>
         </div>
       </div>
@@ -711,29 +721,6 @@ a { color: inherit; text-decoration: none; }
 
 
 
-    <!-- Loan: 13777 E Windy Way -->
-    <div class="card card-blue mb-16">
-      <div class="flex justify-between items-start flex-wrap gap-6 mb-8">
-        <div>
-          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$360,000 — SFR Construction Loan</h3>
-          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">13777 E Windy Way, Vail, AZ 85641</p>
-        </div>
-        <div class="flex gap-6 flex-wrap">
-          <span class="type-badge">Construction</span>
-          <span class="badge badge-blue">Under Contract</span>
-        </div>
-      </div>
-      <div class="metrics">
-        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$360,000</span></div>
-        <div><span class="metric-label">Investor Rate</span><span class="metric-value">11.5% Pre-COO → 11% Post-COO</span></div>
-        <div><span class="metric-label">Funded</span><span class="metric-value">January 27, 2026</span></div>
-        <div><span class="metric-label">Listed Price</span><span class="metric-value green">$465,000</span></div>
-      </div>
-      <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">
-        Home construction is complete. Listed for sale at $465,000. Home is under contract.
-      </p>
-    </div>
-
     <!-- CLOSED -->
     <div class="divider"><div class="divider-line"></div><span class="divider-label">Closed Loans</span><div class="divider-line"></div></div>
 
@@ -792,6 +779,24 @@ a { color: inherit; text-decoration: none; }
       <p style="color:var(--text-muted); font-size:14px;">Home sold for $499,000.</p>
     </div>
 
+    <!-- Closed: 13777 E Windy Way -->
+    <div class="card card-green mb-16" style="opacity:0.85">
+      <div class="flex justify-between items-start flex-wrap gap-6">
+        <div>
+          <h3 style="color:var(--text-bright); font-size:17px; font-weight:700;">$360,000 — SFR Construction Loan</h3>
+          <p style="color:var(--text-dim); font-size:13px; margin-top:3px;">13777 E Windy Way, Vail, AZ 85641</p>
+        </div>
+        <span class="badge badge-green">Paid Off</span>
+      </div>
+      <div class="metrics">
+        <div><span class="metric-label">Loan Amount</span><span class="metric-value">$360,000</span></div>
+        <div><span class="metric-label">Investor Rate</span><span class="metric-value">11.5% Pre-COO → 11% Post-COO</span></div>
+        <div><span class="metric-label">Funded</span><span class="metric-value">January 27, 2026</span></div>
+        <div><span class="metric-label">Payoff Date</span><span class="metric-value green">September 21, 2026</span></div>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px;">Home sold for $465,000.</p>
+    </div>
+
     <!-- DELINQUENT -->
     <div class="divider"><div class="divider-line"></div><span class="divider-label">Delinquent</span><div class="divider-line"></div></div>
     <div class="card text-center" style="padding:24px;">
@@ -828,21 +833,21 @@ a { color: inherit; text-decoration: none; }
       <div class="card flex items-start" style="gap:20px;">
         <span class="step-num">03</span>
         <div style="flex:1">
-          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Oversight &amp; Inspections</h3>
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Oversight & Inspections</h3>
           <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">For every loan, JJJ Capital participates with a minimum 10% investment of the total loan amount. JJJ Capital also oversees the loan throughout its duration, which includes conducting regular on-site inspections during construction and verifying progress before each builder-requested draw to ensure work aligns with the construction schedule.</p>
         </div>
       </div>
       <div class="card flex items-start" style="gap:20px;">
         <span class="step-num">04</span>
         <div style="flex:1">
-          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Investor Participation &amp; Funding</h3>
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Investor Participation & Funding</h3>
           <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">When an investor chooses to participate, the investor sends funds directly to the title company. This ensures that each investor is named on both the Deed of Trust and the Promissory Note for their respective share of the investment, with JJJ Capital named as the ownership of interest for the remaining undistributed loan amount. If new investors participate in subsequent draws, they will be assigned a proportional share of the Deed of Trust and Promissory Note to reflect their contribution.</p>
         </div>
       </div>
       <div class="card flex items-start" style="gap:20px;">
         <span class="step-num">05</span>
         <div style="flex:1">
-          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Interest Payments &amp; Loan Repayment</h3>
+          <h3 style="color:var(--gold); font-size:16px; font-weight:700; margin-bottom:8px;">Interest Payments & Loan Repayment</h3>
           <p style="color:var(--text-muted); font-size:14px; line-height:1.75;">On the monthly anniversary of the initial loan funding (first draw), the builder makes interest payments to the account servicing company. This servicing company collects payments from the builder and distributes each investor's share of the interest accordingly. Investors continue to receive monthly interest payments until the loan is fully repaid — either through the sale of the completed home or a refinance with another lender. When the loan is paid off in full, the account servicing company disburses the investor's principal and any final interest owed directly to the investor.</p>
         </div>
       </div>
@@ -864,7 +869,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar lg">JA</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">Jamie Argueta</h3>
-            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Operations &amp; Investor Experience</p>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Operations & Investor Experience</p>
           </div>
         </div>
         <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:8px;">
@@ -886,7 +891,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar lg">JR</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">John Rallis</h3>
-            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Underwriting &amp; Loan Placement</p>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Underwriting & Loan Placement</p>
           </div>
         </div>
         <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:12px;">
@@ -905,7 +910,7 @@ a { color: inherit; text-decoration: none; }
           <div class="team-avatar lg">JE</div>
           <div>
             <h3 style="color:var(--text-bright); font-size:20px; font-weight:700;">John Entz</h3>
-            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Investor Relations &amp; Strategy</p>
+            <p style="color:var(--gold); font-size:13px; font-weight:600; margin-top:3px; letter-spacing:0.5px;">Investor Relations & Strategy</p>
           </div>
         </div>
         <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:12px;">
@@ -975,6 +980,5 @@ document.querySelectorAll('.nav-link, .mobile-menu button').forEach(btn => {
 });
 </script>
 
-
-
-</body></html>
+</body>
+</html>
