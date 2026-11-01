@@ -191,25 +191,29 @@ a { color: inherit; text-decoration: none; }
 }
 .loan-card:hover { box-shadow: var(--shadow-md); }
 .loan-card-inner {
-  display: grid; grid-template-columns: 240px 1fr; min-height: 200px;
+  display: flex; flex-direction: column;
 }
 .loan-photo {
   background: var(--bg-warm); display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden; min-height: 200px;
+  position: relative; overflow: hidden; width: 100%;
+  min-height: 180px; max-height: 320px;
 }
 .loan-photo img {
-  width: 100%; height: 100%; object-fit: contain; position: absolute; inset: 0; background: var(--bg-warm);
+  width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;
+}
+.loan-photo.photo-drawing img {
+  object-fit: contain; background: var(--bg-warm); padding: 12px;
 }
 .loan-photo-placeholder {
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   color: var(--text-faint); font-size: 13px;
+  padding: 40px 0;
 }
 .loan-photo-placeholder svg { opacity: 0.3; }
 .loan-details { padding: 24px; }
 
 @media (max-width: 700px) {
-  .loan-card-inner { grid-template-columns: 1fr; }
-  .loan-photo { min-height: 160px; max-height: 200px; }
+  .loan-photo { min-height: 140px; max-height: 220px; }
 }
 
 /* ── GRIDS ── */
@@ -705,7 +709,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Loan: 3821 W Cayton Mountain -->
     <div class="loan-card card-accent-gold">
       <div class="loan-card-inner">
-        <div class="loan-photo" id="photo-cayton">
+        <div class="loan-photo photo-drawing" id="photo-cayton">
           <div class="loan-photo-placeholder">
             <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path d="M4 16l4-4 4 4 4-6 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>Property Photo</span>
@@ -749,7 +753,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Loan: 11750 N Camino de Oeste -->
     <div class="loan-card card-accent-gold">
       <div class="loan-card-inner">
-        <div class="loan-photo" id="photo-camino">
+        <div class="loan-photo photo-drawing" id="photo-camino">
           <div class="loan-photo-placeholder">
             <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path d="M4 16l4-4 4 4 4-6 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>Property Photo</span>
@@ -800,7 +804,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Loan: 3220 N Edith Place -->
     <div class="loan-card card-accent-gold">
       <div class="loan-card-inner">
-        <div class="loan-photo" id="photo-edith">
+        <div class="loan-photo photo-drawing" id="photo-edith">
           <div class="loan-photo-placeholder">
             <svg width="36" height="36" fill="none" viewBox="0 0 24 24"><path d="M4 16l4-4 4 4 4-6 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>Property Photo</span>
