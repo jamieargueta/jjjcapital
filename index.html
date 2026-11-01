@@ -216,6 +216,35 @@ a { color: inherit; text-decoration: none; }
   .loan-photo { min-height: 140px; max-height: 220px; }
 }
 
+
+/* ── LIGHTBOX ── */
+.loan-photo.photo-drawing { cursor: zoom-in; }
+.lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 24px;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+  max-width: 95%; max-height: 92vh; object-fit: contain;
+  border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  background: #fff;
+}
+.lightbox-close {
+  position: absolute; top: 16px; right: 20px;
+  background: none; border: none; color: #fff; font-size: 32px;
+  cursor: pointer; opacity: 0.8; line-height: 1;
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-hint {
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(0,0,0,0.5); color: #fff; font-size: 11px;
+  padding: 3px 8px; border-radius: 4px; pointer-events: none;
+  opacity: 0.7;
+}
+
 /* ── GRIDS ── */
 .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -1232,8 +1261,30 @@ Object.entries(LOAN_PHOTOS).forEach(([key, url]) => {
   const container = document.getElementById('photo-' + key);
   if (!container) return;
   container.innerHTML = '<img src="' + url + '" alt="Property photo" loading="lazy">';
+  if (container.classList.contains('photo-drawing')) {
+    container.innerHTML += '<span class="lightbox-hint">Tap to enlarge</span>';
+    container.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+});
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
 });
 </script>
 
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
 </body>
 </html>
